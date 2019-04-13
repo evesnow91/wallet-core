@@ -74,6 +74,8 @@ int TWCoinTypeConfigurationGetDecimals(enum TWCoinType type) {
     case TWCoinTypeAion:
     case TWCoinTypeTheta:
         return 18;
+    case TWCoinTypeZilliqa:
+        return 12;
     case TWCoinTypeBitcoinCash:
     case TWCoinTypeBitcoin:
     case TWCoinTypeDash:
@@ -147,6 +149,7 @@ TWString *_Nullable TWCoinTypeConfigurationGetTransactionURL(enum TWCoinType typ
         break;
     case TWCoinTypeVeChain:
     case TWCoinTypeThunderToken:
+    case TWCoinTypeZilliqa:
         url += "/transactions/" + txId;
         break;
     case TWCoinTypeZcash:
@@ -207,6 +210,7 @@ const char *explorerURLForCoinType(enum TWCoinType type) {
     case TWCoinTypeKIN: return "https://kinexplorer.com";
     case TWCoinTypeTheta: return "https://explorer.thetatoken.org";
     case TWCoinTypeQtum: return "https://qtum.info";
+    case TWCoinTypeZilliqa: return "https://explorer.zilliqa.com";
     default: return "";
     }
 }
@@ -249,6 +253,7 @@ TWString *_Nonnull TWCoinTypeConfigurationGetID(enum TWCoinType type) {
     case TWCoinTypeKIN: string = "kin"; break;
     case TWCoinTypeTheta: string = "theta"; break;
     case TWCoinTypeQtum: string = "qtum"; break;
+    case TWCoinTypeZilliqa: string = "zilliqa"; break;
     default: string = ""; break;
     }
     return TWStringCreateWithUTF8Bytes(string.c_str());
@@ -292,6 +297,7 @@ TWString *_Nonnull TWCoinTypeConfigurationGetName(enum TWCoinType type) {
     case TWCoinTypeKIN: string = "Kin"; break;
     case TWCoinTypeTheta: string = "Theta"; break;
     case TWCoinTypeQtum: string = "Qtum"; break;
+    case TWCoinTypeZilliqa: string = "Zilliqa"; break;
     default: string = ""; break;
     }
     return TWStringCreateWithUTF8Bytes(string.c_str());
